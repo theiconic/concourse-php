@@ -8,9 +8,6 @@ image_resource:
 inputs:
 - name: test-results
 
-outputs:
-- name: test-results
-
 run:
   dir: test-results
   path: cat
