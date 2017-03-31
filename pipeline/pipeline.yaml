@@ -13,6 +13,6 @@ jobs:
   - task: install
     file: resource-concourse-php/pipeline/build.yaml
   - task: test
-    file: resource-concourse-php/pipeline/test.yml
+    file: resource-concourse-php/pipeline/test.yaml
   - task: report
-    file: resource-concourse-php/pipeline/report.yml
+    file: resource-concourse-php/pipeline/report.yaml
