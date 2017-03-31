@@ -1,0 +1,15 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: composer/composer}
+
+inputs:
+- name: resource-concourse-php
+
+outputs:
+- name: output-built-concourse-php
+
+run:
+  path: sources/pipeline/build.sh

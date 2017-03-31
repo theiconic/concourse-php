@@ -1,0 +1,18 @@
+resources:
+  - name: resource-concourse-php
+    type: git
+    source:
+      uri: https://github.com/mjsilva/concourse-php.git
+      branch: master
+
+jobs:
+- name: test
+  plan:
+  - get: resource-concourse-php
+    trigger: true
+  - task: install
+    file: sources/pipeline/install.yml
+#  - task: test
+#    file: sources/pipeline/test.yml
+#  - task: report
+#    file: sources/pipeline/report.yml
