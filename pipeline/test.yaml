@@ -11,7 +11,7 @@ inputs:
 
 outputs:
 - name: test-results
-  path: ../test-results
+  path: test-results
 
 run:
   path: resource-concourse-php/pipeline/test.sh
