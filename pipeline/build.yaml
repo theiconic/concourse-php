@@ -10,7 +10,7 @@ inputs:
 
 outputs:
 - name: built-concourse-php
-  path: resource-concourse-php
+  path: ./resource-concourse-php
 
 run:
   dir: resource-concourse-php
