@@ -4,4 +4,4 @@ composer install
 composer dump-autoload
 
 mkdir ../source
-cp -rv . ../source
+cp -r . ../source
