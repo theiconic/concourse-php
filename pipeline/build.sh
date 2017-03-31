@@ -2,5 +2,5 @@
 
 composer install
 
-mkdir source
-cp -rv . source
+mkdir ../source
+cp -rv . ../source
