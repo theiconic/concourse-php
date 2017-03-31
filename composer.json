@@ -1,0 +1,14 @@
+{
+  "name": "mjsilva/concourse-php",
+  "description": "Concource CI Test",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Manuel Silva"
+    }
+  ],
+  "require": {
+    "league/climate": "3.2.1"
+  }
+}

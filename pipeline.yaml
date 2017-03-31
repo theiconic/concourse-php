@@ -1,0 +1,21 @@
+resources:
+- name: concourse-php
+  type: git
+  source:
+    uri: git@github.com:mjsilva/concourse-php.git
+    branch: master
+
+- name: git-resource-image
+  type: docker-image
+    repository: concourse/git-resource
+    username: {{docker-hub-username}}
+    password: {{docker-hub-password}}
+
+jobs:
+- name: build-fpm
+  public: true
+  plan:
+  - get: bob-repo
+    trigger: true
+  - put: git-resource-image
+    dockerfile: Dockerfile
