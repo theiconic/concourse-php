@@ -3,14 +3,14 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: composer/composer, tag: alpine}
+  source: {repository: php, tag: alpine}
 
 inputs:
 - name: built-concourse-php
 
 outputs:
 - name: test-results
-  path: built-concourse-php/test-results
+  path: test-results
 
 run:
   dir: built-concourse-php
