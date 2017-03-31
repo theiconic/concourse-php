@@ -4,6 +4,7 @@ COPY . /usr/src/concourse-php
 WORKDIR /usr/src/concourse-php
 
 # Packages
+RUN apt-get update
 RUN apt-get install -y --allow-unauthenticated zip
 
 # Install Composer
