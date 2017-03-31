@@ -7,11 +7,11 @@ image_resource:
 
 inputs:
 - name: built-concourse-php
+- name: resource-concourse-php
 
 outputs:
 - name: test-results
   path: test-results
 
 run:
-  dir: built-concourse-php
-  path: pipeline/test.sh
+  path: resource-concourse-php/pipeline/test.sh
