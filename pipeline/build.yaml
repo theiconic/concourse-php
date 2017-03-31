@@ -9,7 +9,7 @@ inputs:
 - name: resource-concourse-php
 
 outputs:
-- name: output-built-concourse-php
+- name: built-concourse-php
 
 run:
   dir: resource-concourse-php
