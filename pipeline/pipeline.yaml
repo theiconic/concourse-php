@@ -11,7 +11,7 @@ jobs:
   - get: resource-concourse-php
     trigger: true
   - task: install
-    file: resource-concourse-php/pipeline/install.yml
+    file: resource-concourse-php/pipeline/build.yml
 #  - task: test
 #    file: sources/pipeline/test.yml
 #  - task: report
