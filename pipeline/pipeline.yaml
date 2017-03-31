@@ -12,7 +12,7 @@ jobs:
     trigger: true
   - task: install
     file: resource-concourse-php/pipeline/build.yaml
-#  - task: test
-#    file: sources/pipeline/test.yml
+  - task: test
+    file: sources/pipeline/test.yml
 #  - task: report
 #    file: sources/pipeline/report.yml

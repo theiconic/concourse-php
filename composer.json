@@ -8,7 +8,13 @@
       "name": "Manuel Silva"
     }
   ],
+  "autoload": {
+    "psr-4": {"ConcoursePHP\\": "src/"}
+  },
   "require": {
     "league/climate": "3.2.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0"
   }
 }
