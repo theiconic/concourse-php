@@ -13,4 +13,4 @@ outputs:
 
 run:
   dir: resource-concourse-php
-  path: resource-concourse-php/pipeline/build.sh
+  path: pipeline/build.sh
