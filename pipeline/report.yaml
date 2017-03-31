@@ -1,0 +1,17 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: busybox}
+
+inputs:
+- name: test-results
+
+outputs:
+- name: test-results
+
+run:
+  dir: test-results
+  path: cat
+  args: [testdox.txt]

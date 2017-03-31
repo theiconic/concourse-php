@@ -14,5 +14,5 @@ jobs:
     file: resource-concourse-php/pipeline/build.yaml
   - task: test
     file: resource-concourse-php/pipeline/test.yml
-#  - task: report
-#    file: sources/pipeline/report.yml
+  - task: report
+    file: resource-concourse-php/pipeline/report.yml
