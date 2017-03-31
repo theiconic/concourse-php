@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 composer install
