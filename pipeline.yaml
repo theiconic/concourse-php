@@ -2,20 +2,41 @@ resources:
 - name: concourse-php
   type: git
   source:
-    uri: git@github.com:mjsilva/concourse-php.git
+    uri: https://github.com/mjsilva/concourse-php.git
     branch: master
 
-- name: git-resource-image
+- name: concourse-php-image
   type: docker-image
-    repository: concourse/git-resource
+  source:
+    repository: mjsilva/concourse-php
     username: {{docker-hub-username}}
     password: {{docker-hub-password}}
 
 jobs:
-- name: build-fpm
-  public: true
+- name: build-image
   plan:
-  - get: bob-repo
+  - get: concourse-php
     trigger: true
-  - put: git-resource-image
-    dockerfile: Dockerfile
+  - put: concourse-php-image
+    params:
+      build: concourse-php
+
+- name: test
+  plan:
+  - get: concourse-php-image
+    passed: [build-image]
+    trigger: true
+  - get: flight-school
+    passed: [build-cached-image]
+  - task: run-tests
+    image: flight-school-docker-image
+    config:
+      platform: linux
+      inputs:
+      - name: flight-school
+      run:
+        dir: flight-school
+        path: bundle
+        args:
+        - exec
+        - rspec
