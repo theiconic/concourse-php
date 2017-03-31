@@ -12,4 +12,4 @@ outputs:
 - name: output-built-concourse-php
 
 run:
-  path: sources/pipeline/build.sh
+  path: resource-concourse-php/pipeline/build.sh
