@@ -1,0 +1,25 @@
+resources:
+  - name: resource-concourse-php
+    type: git
+    source:
+      uri: https://github.com/mjsilva/concourse-php.git
+      branch: master
+
+jobs:
+- name: build
+  plan:
+  - get: resource-concourse-php
+    trigger: true
+  - task: install
+    file: resource-concourse-php/pipeline/build.yaml
+
+- name: test
+  plan:
+    - aggregate:
+      - get: resource-concourse-php
+        passed: [build]
+    - task: test
+      file: resource-concourse-php/pipeline/test.yaml
+    - task: report
+      file: resource-concourse-php/pipeline/report.yaml
+
