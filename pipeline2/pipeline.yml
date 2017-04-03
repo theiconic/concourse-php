@@ -17,6 +17,7 @@ jobs:
   plan:
     - aggregate:
       - get: resource-concourse-php
+        trigger: true
         passed: [build]
     - task: test
       file: resource-concourse-php/pipeline/test.yaml
